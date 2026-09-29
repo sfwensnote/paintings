@@ -135,6 +135,10 @@ img { display: block; max-width: 100%; }
 .result-art-image { width: 100%; max-height: 620px; aspect-ratio: .82; }
 .result-art-frame .art-placeholder { aspect-ratio: .82; }
 .panorama-hint { position: absolute; left: 12px; bottom: 12px; padding: 6px 9px; color: #f5f0e7; background: rgba(49,61,53,.86); font-size: 9px; letter-spacing: .04em; }
+.result-art-frame > .panorama-image, .shared-art > .panorama-image { justify-content: flex-start; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-color: rgba(49,61,53,.55) transparent; scrollbar-width: thin; touch-action: pan-x pan-y; }
+.result-art-frame > .panorama-image .artwork-image, .shared-art > .panorama-image .artwork-image { width: auto; max-width: none; height: 100%; flex: none; object-fit: contain; }
+.similar-art .panorama-image .artwork-image, .share-card-art .panorama-image .artwork-image { width: 100%; height: 100%; object-fit: cover; }
+.similar-art .panorama-hint, .share-card-art .panorama-hint { display: none; }
 .result-art-index { position: absolute; right: 18px; bottom: 15px; color: #f4eee4; font-size: 9px; letter-spacing: .13em; text-shadow: 0 1px 3px #222; }
 .result-art-index i { color: #dfab79; font-style: normal; }
 .art-credit { display: flex; justify-content: space-between; gap: 16px; margin: 12px 0 0; color: var(--muted); font-size: 10px; letter-spacing: .07em; }

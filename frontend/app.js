@@ -54,7 +54,7 @@ const toast = message => {
 const artworkImage = (artwork, className = '') => {
   const image = safeURL(artwork?.image_url);
   return image
-    ? `<a class="artwork-image-link ${className} ${artwork?.image_layout === 'panorama' ? 'panorama-image' : ''}" href="${escapeHTML(image)}" target="_blank" rel="noreferrer" aria-label="查看完整作品图：${escapeHTML(artwork.name_cn)}"><img class="artwork-image" src="${escapeHTML(image)}" alt="${escapeHTML(artwork.name_cn)}" loading="lazy" referrerpolicy="no-referrer">${artwork?.image_layout === 'panorama' ? '<span class="panorama-hint">长卷 · 点击查看全卷</span>' : ''}</a>`
+    ? `<a class="artwork-image-link ${className} ${artwork?.image_layout === 'panorama' ? 'panorama-image' : ''}" href="${escapeHTML(image)}" target="_blank" rel="noreferrer" aria-label="${artwork?.image_layout === 'panorama' ? '横向滑动浏览并打开完整长卷：' : '查看完整作品图：'}${escapeHTML(artwork.name_cn)}"><img class="artwork-image" src="${escapeHTML(image)}" alt="${escapeHTML(artwork.name_cn)}" loading="lazy" referrerpolicy="no-referrer">${artwork?.image_layout === 'panorama' ? '<span class="panorama-hint">长卷 · 横向滑动浏览</span>' : ''}</a>`
     : `<div class="art-placeholder ${className}" role="img" aria-label="${escapeHTML(artwork?.name_cn || '作品图片待补')}"><span class="placeholder-kicker">作品图待补</span><span class="placeholder-title">${escapeHTML(artwork?.name_cn || '无题')}</span><span class="placeholder-caption">${escapeHTML(artwork?.artist_cn || artwork?.artist_en || '')}</span></div>`;
 };
 const header = (right = '') => `<header class="site-header"><a class="wordmark" href="${appURL('')}" aria-label="画见首页"><img src="${appURL('frontend/mark.svg')}" alt="" aria-hidden="true"><span>画见</span><i>ART & LIFE</i></a><nav class="header-nav"><span>探索生活中的艺术气质</span>${right}</nav></header>`;
@@ -282,7 +282,9 @@ async function shareImageBlob() {
       const image = new Image(); image.crossOrigin = 'anonymous'; image.referrerPolicy = 'no-referrer';
       image.src = safeURL(artwork.image_url);
       await Promise.race([new Promise((resolve, reject) => { image.onload = resolve; image.onerror = reject; }), new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3200))]);
-      const scale = Math.min(936 / image.naturalWidth, 710 / image.naturalHeight);
+      const scale = artwork.image_layout === 'panorama'
+        ? Math.max(936 / image.naturalWidth, 710 / image.naturalHeight)
+        : Math.min(936 / image.naturalWidth, 710 / image.naturalHeight);
       const width = image.naturalWidth * scale, height = image.naturalHeight * scale;
       context.save(); context.beginPath(); context.rect(72, 72, 936, 710); context.clip();
       context.drawImage(image, 72 + (936 - width) / 2, 72 + (710 - height) / 2, width, height); context.restore();

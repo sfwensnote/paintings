@@ -1,0 +1,805 @@
+{
+  "version": "V0.6",
+  "assets": [
+    {
+      "type_id": "T01",
+      "type_code": "0-0-0-0-0",
+      "artwork": "《喜鹊》",
+      "artist": "Claude Monet",
+      "archetype_name": "安静的生活者",
+      "dimensions": {
+        "connection": 20,
+        "structure": 35,
+        "affect": 25,
+        "exploration": 30,
+        "imagination": 25
+      },
+      "keywords": [
+        "独处",
+        "松弛",
+        "日常",
+        "真实",
+        "克制"
+      ],
+      "hit_line": "你喜欢把日子过得松弛而清楚，安静本身就足够丰盛。",
+      "life_narrative": "你更喜欢把生活留出一点没有安排的空间。你不依赖热闹来确认自己的状态，也不急着把普通日子变成戏剧。熟悉的环境、真实的细节和偶然出现的小变化，往往比宏大的想象更能让你感到踏实。",
+      "why_this_artwork": "《喜鹊》没有宏大叙事，雪地、栅栏与一只鸟构成松弛而安静的日常。低饱和色调和开放空间，对应独处、克制、熟悉与现实取向。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T02",
+      "type_code": "0-0-0-0-1",
+      "artwork": "《蓝与金的夜曲：老巴特西桥》",
+      "artist": "James McNeill Whistler",
+      "archetype_name": "静默的遐想者",
+      "dimensions": {
+        "connection": 20,
+        "structure": 35,
+        "affect": 30,
+        "exploration": 30,
+        "imagination": 70
+      },
+      "keywords": [
+        "独处",
+        "留白",
+        "夜色",
+        "熟悉",
+        "想象"
+      ],
+      "hit_line": "你习惯把日常留出一点空白，让想象在安静里慢慢亮起来。",
+      "life_narrative": "你并不需要频繁离开熟悉生活，想象却会在安静中自然发生。你更习惯独自消化感受，让普通景物在心里多停留一会儿，再慢慢长出另一层意义。你的想象不是喧闹的，而是轻、远、留有余地。",
+      "why_this_artwork": "惠斯勒把熟悉的泰晤士河夜景削弱为色调、雾与微光。画面安静、松弛，却把现实推向诗意联想，适合低情感强度而高想象的类型。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T03",
+      "type_code": "0-0-0-1-0",
+      "artwork": "《雾警》",
+      "artist": "Winslow Homer",
+      "archetype_name": "清醒的远行者",
+      "dimensions": {
+        "connection": 15,
+        "structure": 30,
+        "affect": 35,
+        "exploration": 80,
+        "imagination": 25
+      },
+      "keywords": [
+        "独行",
+        "真实",
+        "风险",
+        "探索",
+        "克制"
+      ],
+      "hit_line": "你不需要喧闹的鼓励，也愿意独自驶向还看不清的方向。",
+      "life_narrative": "你愿意独自面对真实世界的不确定性。你不会为了冒险而制造戏剧，也不需要把每一步计划得很满；当方向还不完全清楚时，你更愿意先观察、判断，再靠自己的经验继续前进。",
+      "why_this_artwork": "《雾警》把孤舟、海面与逼近的雾放在真实风险中。人物独自行动、环境高度不确定，但画面仍克制务实，对应独处、探索和现实取向。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T04",
+      "type_code": "0-0-0-1-1",
+      "artwork": "《富春山居图》",
+      "artist": "黄公望",
+      "archetype_name": "山水间的游心者",
+      "dimensions": {
+        "connection": 20,
+        "structure": 40,
+        "affect": 30,
+        "exploration": 70,
+        "imagination": 65
+      },
+      "keywords": [
+        "独处",
+        "游历",
+        "从容",
+        "山水",
+        "想象"
+      ],
+      "hit_line": "你喜欢自由地走远，也懂得把远方安放在自己的内心里。",
+      "life_narrative": "你喜欢远方，却不一定追求速度。对你来说，探索可以是一种缓慢展开的过程：走进新的地方，也让思绪跟着地形、天气和距离自由延伸。你更愿意独自保留这种体验，不急着给它一个确定答案。",
+      "why_this_artwork": "《富春山居图》以长卷让山水缓慢展开，空间不像单一点透视，更像一段可以游走的经验。它克制、独立、开放，也给观看者很大的想象余地。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T05",
+      "type_code": "0-0-1-0-0",
+      "artwork": "《麦田群鸦》",
+      "artist": "Vincent van Gogh",
+      "archetype_name": "敏感的守望者",
+      "dimensions": {
+        "connection": 15,
+        "structure": 30,
+        "affect": 85,
+        "exploration": 35,
+        "imagination": 40
+      },
+      "keywords": [
+        "独处",
+        "强烈",
+        "乡野",
+        "真实",
+        "敏感"
+      ],
+      "hit_line": "你感受得很深，却更愿意独自穿过熟悉世界里的风声。",
+      "life_narrative": "你对熟悉环境中的变化非常敏感。很多人眼里只是普通的一天，你却可能感受到更强的风、光线、气氛和情绪。你通常自己承受这种强度，不一定马上寻找解释，也不需要把它包装成另一个世界。",
+      "why_this_artwork": "梵高把熟悉麦田画成高度紧张的色彩和笔触。题材仍来自现实乡野，但画面情绪强、结构自由，适合独处且感受强烈的类型。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T06",
+      "type_code": "0-0-1-0-1",
+      "artwork": "《星月夜》",
+      "artist": "Vincent van Gogh",
+      "archetype_name": "夜空里的感受者",
+      "dimensions": {
+        "connection": 15,
+        "structure": 30,
+        "affect": 90,
+        "exploration": 35,
+        "imagination": 90
+      },
+      "keywords": [
+        "独处",
+        "情绪",
+        "夜空",
+        "波动",
+        "想象"
+      ],
+      "hit_line": "你的世界并不总是平静，但你会把波动变成属于自己的星光。",
+      "life_narrative": "你的生活未必总在变化，但你的内部世界很少真正平静。熟悉的事物会在你的感受里被重新放大、扭转和连接。你更习惯独自处理这些波动，并把现实里无法说清的部分转化成自己的想象。",
+      "why_this_artwork": "《星月夜》来自真实夜景经验，却被旋涡、星光和柏树重新组织成内在景象。它同时具备独处、自由、强烈情绪和高想象。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T07",
+      "type_code": "0-0-1-1-0",
+      "artwork": "《雨、蒸汽和速度》",
+      "artist": "J. M. W. Turner",
+      "archetype_name": "迎风的疾行者",
+      "dimensions": {
+        "connection": 20,
+        "structure": 30,
+        "affect": 80,
+        "exploration": 85,
+        "imagination": 35
+      },
+      "keywords": [
+        "独行",
+        "速度",
+        "变化",
+        "现实",
+        "强烈"
+      ],
+      "hit_line": "你愿意把自己交给速度和变化，在真实世界里感受前进的力量。",
+      "life_narrative": "你更愿意从真实的速度、天气和变化中感受生命力。面对未知，你的反应往往不是先把一切安排妥当，而是进入其中，在移动中理解局面。你需要的不是幻想中的远方，而是能够真正让自己向前的现实变化。",
+      "why_this_artwork": "特纳把火车、暴雨和速度融成高速运动的现实场景。画面结构松动、情绪强，主题又直接指向变化与前进，因此适合现实型探索者。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T08",
+      "type_code": "0-0-1-1-1",
+      "artwork": "《冰海》",
+      "artist": "Caspar David Friedrich",
+      "archetype_name": "荒境的探寻者",
+      "dimensions": {
+        "connection": 15,
+        "structure": 35,
+        "affect": 80,
+        "exploration": 85,
+        "imagination": 70
+      },
+      "keywords": [
+        "独处",
+        "荒凉",
+        "边界",
+        "强烈",
+        "想象"
+      ],
+      "hit_line": "越是陌生和荒凉的边界，越容易唤醒你强烈的想象与意志。",
+      "life_narrative": "你会被边界、荒凉和未知吸引，而且这种吸引往往伴随着强烈感受。你并不需要很多人同行，也不执着于一条清楚路线。越是超出日常经验的场景，越容易让你的想象和情绪同时被唤醒。",
+      "why_this_artwork": "碎裂冰层与被压倒的船体让《冰海》呈现极端环境和崇高感。构图不稳定、情绪强烈，又把现实自然推向象征性的未知。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T09",
+      "type_code": "0-1-0-0-0",
+      "artwork": "《室内：背对观者的年轻女子》",
+      "artist": "Vilhelm Hammershøi",
+      "archetype_name": "安静的秩序者",
+      "dimensions": {
+        "connection": 15,
+        "structure": 85,
+        "affect": 20,
+        "exploration": 20,
+        "imagination": 25
+      },
+      "keywords": [
+        "独处",
+        "秩序",
+        "室内",
+        "稳定",
+        "克制"
+      ],
+      "hit_line": "你需要清楚的边界和安静的秩序，日常因此变得可靠。",
+      "life_narrative": "你重视属于自己的空间，也喜欢生活保持清楚、稳定和可预期。你不需要持续的新鲜刺激，很多时候，安静的房间、固定的节奏和可以掌握的日常，就足以让你恢复状态。",
+      "why_this_artwork": "哈默修伊的室内画以门框、墙面和有限色调建立清楚边界。人物背向观者、空间安静封闭，强调独处、秩序、熟悉和现实。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T10",
+      "type_code": "0-1-0-0-1",
+      "artwork": "《街道的神秘与忧郁》",
+      "artist": "Giorgio de Chirico",
+      "archetype_name": "寂静的造境者",
+      "dimensions": {
+        "connection": 15,
+        "structure": 75,
+        "affect": 25,
+        "exploration": 25,
+        "imagination": 85
+      },
+      "keywords": [
+        "独处",
+        "秩序",
+        "熟悉",
+        "神秘",
+        "想象"
+      ],
+      "hit_line": "你喜欢熟悉世界里的秩序，却总能看见它背后不寻常的一层。",
+      "life_narrative": "你表面上偏爱稳定和秩序，内心却会对熟悉事物产生第二层想象。你不一定主动追逐陌生环境，但一条空街、一束斜光、一个不合常理的细节，都可能让你开始思考现实之外还隐藏着什么。",
+      "why_this_artwork": "德·基里科用严格透视和建筑秩序描绘空旷街道，却通过阴影、尺度和不合常理的关系制造谜感。它把熟悉结构转化成克制的想象。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T11",
+      "type_code": "0-1-0-1-0",
+      "artwork": "《溪山行旅图》",
+      "artist": "范宽",
+      "archetype_name": "独行的观山者",
+      "dimensions": {
+        "connection": 15,
+        "structure": 85,
+        "affect": 30,
+        "exploration": 80,
+        "imagination": 40
+      },
+      "keywords": [
+        "独处",
+        "秩序",
+        "山川",
+        "探索",
+        "真实"
+      ],
+      "hit_line": "你愿意独自走进更大的世界，用耐心和秩序理解真实的尺度。",
+      "life_narrative": "你喜欢独自理解真实世界，而且愿意为这种理解投入耐心。面对庞大、陌生或复杂的事物，你更倾向建立自己的观察顺序，再一点点确认位置和尺度。远方吸引你，但你不会因此失去判断。",
+      "why_this_artwork": "《溪山行旅图》用严密层次建立巨大山体，人物被压缩到极小尺度。观看者像独自进入真实自然，以秩序理解宏大的陌生空间。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T12",
+      "type_code": "0-1-0-1-1",
+      "artwork": "《海边的僧侣》",
+      "artist": "Caspar David Friedrich",
+      "archetype_name": "远方的凝望者",
+      "dimensions": {
+        "connection": 10,
+        "structure": 65,
+        "affect": 35,
+        "exploration": 80,
+        "imagination": 75
+      },
+      "keywords": [
+        "独处",
+        "留白",
+        "秩序",
+        "未知",
+        "想象"
+      ],
+      "hit_line": "你更愿意站得远一点，看清未知，再决定如何靠近它。",
+      "life_narrative": "你对未知保持强烈兴趣，但靠近它的方式很安静。你更喜欢先拉开一点距离，让自己看清整体，再决定是否继续前进。你既需要某种秩序，也愿意为无法完全解释的事物留下想象空间。",
+      "why_this_artwork": "《海边的僧侣》用极简水平结构承载几乎无边的海天，一个小人物独自面对未知。画面克制，却留下强烈的精神想象空间。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T13",
+      "type_code": "0-1-1-0-0",
+      "artwork": "《包扎耳朵的自画像》",
+      "artist": "Vincent van Gogh",
+      "archetype_name": "清醒的承受者",
+      "dimensions": {
+        "connection": 10,
+        "structure": 70,
+        "affect": 85,
+        "exploration": 25,
+        "imagination": 30
+      },
+      "keywords": [
+        "独处",
+        "真实",
+        "自省",
+        "秩序",
+        "强烈"
+      ],
+      "hit_line": "你不会回避真实的伤口，也会努力把强烈感受整理成可以面对的样子。",
+      "life_narrative": "你对现实中的伤痛和变化感受很深，却不愿意让它们失去形状。即使情绪很强，你也更倾向独自整理、确认和面对事实。你不是逃向另一个世界，而是试图在真实处境中重新站稳。",
+      "why_this_artwork": "这幅自画像以稳定肖像结构直面身体受伤后的现实状态。色彩和笔触强烈，但主题具体、私人且自我凝视，对应独处、秩序与高情感。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T14",
+      "type_code": "0-1-1-0-1",
+      "artwork": "《呐喊》",
+      "artist": "Edvard Munch",
+      "archetype_name": "内心的回声者",
+      "dimensions": {
+        "connection": 10,
+        "structure": 65,
+        "affect": 95,
+        "exploration": 25,
+        "imagination": 85
+      },
+      "keywords": [
+        "独处",
+        "情绪",
+        "回声",
+        "熟悉",
+        "想象"
+      ],
+      "hit_line": "你的内心回声很强，熟悉的世界也可能被感受重新改变形状。",
+      "life_narrative": "你的内在感受可能比外部环境更有重量。熟悉的世界并不一定能降低这种强度，因为情绪本身会改变你看见事物的方式。你通常独自经历这些时刻，同时也容易把感受转化成非常鲜明的内在画面。",
+      "why_this_artwork": "《呐喊》保留桥梁与远景的秩序，却让线条、天空和人物被情绪扭曲。熟悉环境被内在体验重新塑形，是强烈情感与高想象的典型组合。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T15",
+      "type_code": "0-1-1-1-0",
+      "artwork": "《跨越阿尔卑斯山圣伯纳隘道的拿破仑》",
+      "artist": "Jacques-Louis David",
+      "archetype_name": "坚定的攀登者",
+      "dimensions": {
+        "connection": 15,
+        "structure": 85,
+        "affect": 80,
+        "exploration": 90,
+        "imagination": 35
+      },
+      "keywords": [
+        "独立",
+        "目标",
+        "秩序",
+        "行动",
+        "探索"
+      ],
+      "hit_line": "你会把强烈的目标感收进明确方向里，然后一步一步向更高处推进。",
+      "life_narrative": "你会把强烈的目标感放进明确方向里。面对新的高度或困难，你不喜欢完全随波而动，而更愿意确认目标、保持节奏，再持续推进。你相信行动发生在现实世界，因此结果、路径和到达本身都很重要。",
+      "why_this_artwork": "大卫用新古典主义的清晰结构组织一场跨越险境的行动。人物目标明确、方向清楚、情绪昂扬，适合秩序感强且面向现实挑战的探索类型。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T16",
+      "type_code": "0-1-1-1-1",
+      "artwork": "《死之岛》",
+      "artist": "Arnold Böcklin",
+      "archetype_name": "幽境的远航者",
+      "dimensions": {
+        "connection": 10,
+        "structure": 80,
+        "affect": 75,
+        "exploration": 80,
+        "imagination": 90
+      },
+      "keywords": [
+        "独处",
+        "秩序",
+        "深处",
+        "强烈",
+        "象征"
+      ],
+      "hit_line": "你被未知吸引，但不是莽撞靠近；你更愿意带着秩序走进深处。",
+      "life_narrative": "你对未知、象征和边界问题有很强的吸引力，但你进入这些领域的方式并不混乱。你需要一种内部秩序来承载强烈感受，再沿着它走向更深、更远的地方。对你来说，想象是一种有方向的探索。",
+      "why_this_artwork": "《死之岛》以稳定近乎对称的构图，引导小船驶向封闭而神秘的岛。秩序、强情绪、远行与象征想象同时存在。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T17",
+      "type_code": "1-0-0-0-0",
+      "artwork": "《划船》",
+      "artist": "Édouard Manet",
+      "archetype_name": "松弛的同行者",
+      "dimensions": {
+        "connection": 70,
+        "structure": 30,
+        "affect": 30,
+        "exploration": 25,
+        "imagination": 20
+      },
+      "keywords": [
+        "联结",
+        "松弛",
+        "日常",
+        "熟悉",
+        "真实"
+      ],
+      "hit_line": "你喜欢有人同行，却不需要把每一刻都安排得很满。",
+      "life_narrative": "你喜欢与人共享生活，但不需要把关系经营成一套精密计划。熟悉的陪伴、真实的天气和自然发生的对话，对你来说就已经足够。你更在意一起度过的感觉，而不是这段时间必须产生什么意义。",
+      "why_this_artwork": "马奈把两个人的水上休闲处理得轻松直接，构图开放、气氛日常，没有强烈戏剧。它强调陪伴、松弛、熟悉与现实体验。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T18",
+      "type_code": "1-0-0-0-1",
+      "artwork": "《我与村庄》",
+      "artist": "Marc Chagall",
+      "archetype_name": "故乡的织梦者",
+      "dimensions": {
+        "connection": 75,
+        "structure": 35,
+        "affect": 40,
+        "exploration": 25,
+        "imagination": 90
+      },
+      "keywords": [
+        "联结",
+        "故乡",
+        "记忆",
+        "自由",
+        "想象"
+      ],
+      "hit_line": "你珍惜熟悉的人与地方，也会把它们重新织成只属于自己的想象。",
+      "life_narrative": "你和熟悉的人、地方之间有稳定连接，但记忆在你心里从来不是原样保存。你会自然地把现实中的人物、动物、家乡和片段重新组合，形成带有私人色彩的世界。想象让关系变得更长久。",
+      "why_this_artwork": "夏加尔把人物、动物和村庄记忆并置在同一画面中。关系来自熟悉生活，结构却自由跳跃，现实被记忆和想象重新编织。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T19",
+      "type_code": "1-0-0-1-0",
+      "artwork": "《大桥骤雨》",
+      "artist": "歌川广重",
+      "archetype_name": "随雨而行的人",
+      "dimensions": {
+        "connection": 65,
+        "structure": 35,
+        "affect": 30,
+        "exploration": 70,
+        "imagination": 25
+      },
+      "keywords": [
+        "联结",
+        "自发",
+        "变化",
+        "行动",
+        "现实"
+      ],
+      "hit_line": "你愿意和世界保持连接，也能顺着变化自然前行。",
+      "life_narrative": "你愿意和别人一起身处变化之中，却不需要事先把一切安排好。环境突然改变时，你更容易顺着现实调整行动。你对新鲜体验保持兴趣，但注意力仍然落在真实的人、天气和道路上。",
+      "why_this_artwork": "广重描绘突如其来的雨和桥上赶路的人群。事件真实、变化突然，人物彼此共处却各自顺势行动，具有联结、自发和现实探索感。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T20",
+      "type_code": "1-0-0-1-1",
+      "artwork": "《舟发西苔岛》",
+      "artist": "Jean-Antoine Watteau",
+      "archetype_name": "浪漫的同行者",
+      "dimensions": {
+        "connection": 80,
+        "structure": 35,
+        "affect": 40,
+        "exploration": 75,
+        "imagination": 80
+      },
+      "keywords": [
+        "联结",
+        "远方",
+        "松弛",
+        "浪漫",
+        "想象"
+      ],
+      "hit_line": "对你来说，最好的远方常常不是一个人抵达，而是和人一起出发。",
+      "life_narrative": "你喜欢有人同行，也愿意让关系把你带到新的地方。你不执着于严密计划，而更相信共同经历会自然展开。对于你，探索不只是抵达陌生地点，也包括一起进入一种更浪漫、更有想象力的生活状态。",
+      "why_this_artwork": "华托把成对人物、旅途与神话中的西苔岛放在一起。关系是核心，构图轻盈自由，远方同时具有现实行动与浪漫想象。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T21",
+      "type_code": "1-0-1-0-0",
+      "artwork": "《煎饼磨坊的舞会》",
+      "artist": "Pierre-Auguste Renoir",
+      "archetype_name": "热烈的生活者",
+      "dimensions": {
+        "connection": 95,
+        "structure": 30,
+        "affect": 80,
+        "exploration": 25,
+        "imagination": 20
+      },
+      "keywords": [
+        "联结",
+        "热烈",
+        "日常",
+        "自发",
+        "真实"
+      ],
+      "hit_line": "你相信生活的热度，来自人与人之间真实而自然的相遇。",
+      "life_narrative": "你对生活的热度往往来自人与人的真实相遇。熟悉的场景、音乐、谈话和共同消磨的时间，会直接影响你的情绪。你不需要把这些快乐设计得很复杂，只要气氛自然流动，你就很容易投入其中。",
+      "why_this_artwork": "雷诺阿把舞会、人群、光线和谈话融成流动的生活现场。强烈的社交能量和愉悦来自熟悉现实，而不是象征或幻想。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T22",
+      "type_code": "1-0-1-0-1",
+      "artwork": "《生日》",
+      "artist": "Marc Chagall",
+      "archetype_name": "亲密的梦想家",
+      "dimensions": {
+        "connection": 85,
+        "structure": 30,
+        "affect": 90,
+        "exploration": 30,
+        "imagination": 90
+      },
+      "keywords": [
+        "联结",
+        "亲密",
+        "强烈",
+        "熟悉",
+        "梦境"
+      ],
+      "hit_line": "亲密关系会放大你的感受，也让日常轻轻离开地面。",
+      "life_narrative": "亲密关系会明显放大你的感受，也会激活你的想象。你喜欢让熟悉生活保持一点不受规则限制的浪漫：一个普通房间、一段关系、一个瞬间，都可能在你心里变得轻盈、夸张而特别。",
+      "why_this_artwork": "《生日》从一个亲密室内瞬间出发，却让人物漂浮、姿态被拉长。真实关系、强烈情感和自由想象被压进同一个日常场景。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T23",
+      "type_code": "1-0-1-1-0",
+      "artwork": "《神奈川冲浪里》",
+      "artist": "葛饰北斋",
+      "archetype_name": "迎浪的行动者",
+      "dimensions": {
+        "connection": 70,
+        "structure": 30,
+        "affect": 85,
+        "exploration": 85,
+        "imagination": 35
+      },
+      "keywords": [
+        "联结",
+        "风浪",
+        "强烈",
+        "探索",
+        "现实"
+      ],
+      "hit_line": "你知道浪会来，但你更在意怎样和同伴一起继续向前。",
+      "life_narrative": "你愿意和别人一起面对真实世界里的风浪。变化越明显，你越容易进入行动状态，而不是退回完全可控的地方。你接受局面不总按计划发展，也相信人在强烈环境中仍然可以继续向前。",
+      "why_this_artwork": "北斋让数艘船和船工共同面对巨浪。构图充满运动和紧张，题材仍是现实海上行动，能同时承载联结、强烈与探索。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T24",
+      "type_code": "1-0-1-1-1",
+      "artwork": "《人间乐园》",
+      "artist": "Hieronymus Bosch",
+      "archetype_name": "丰盛的冒险家",
+      "dimensions": {
+        "connection": 90,
+        "structure": 25,
+        "affect": 90,
+        "exploration": 85,
+        "imagination": 95
+      },
+      "keywords": [
+        "联结",
+        "丰盛",
+        "强烈",
+        "探索",
+        "奇想"
+      ],
+      "hit_line": "你对世界有旺盛的好奇，也愿意和别人一起走进复杂而陌生的经验。",
+      "life_narrative": "你对世界有旺盛的好奇，也不排斥复杂、热烈甚至有些混乱的体验。你喜欢人与人之间产生连接，同时又愿意让想象不断把边界推远。比起一个标准答案，你更容易被一个足够丰富的世界吸引。",
+      "why_this_artwork": "《人间乐园》把大量人物、动物、建筑和幻想生物置于连续而复杂的世界。它拥挤、自由、强烈，几乎把社交、探索和想象同时推到高位。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T25",
+      "type_code": "1-1-0-0-0",
+      "artwork": "《清明上河图》",
+      "artist": "张择端",
+      "archetype_name": "人间的组织者",
+      "dimensions": {
+        "connection": 95,
+        "structure": 85,
+        "affect": 30,
+        "exploration": 25,
+        "imagination": 20
+      },
+      "keywords": [
+        "联结",
+        "秩序",
+        "日常",
+        "社会",
+        "现实"
+      ],
+      "hit_line": "你关注人与人如何共同生活，也擅长在繁忙日常中看见秩序。",
+      "life_narrative": "你关注人与人怎样在真实世界中共同生活。熟悉的规则、分工、道路和日常活动不会让你觉得乏味，反而让你看见一个社会如何运行。你重视连接，也相信秩序能够让复杂生活持续下去。",
+      "why_this_artwork": "《清明上河图》以长卷呈现城市、道路、商业和大量人物互动。复杂社会被组织成可阅读的日常秩序，是联结、结构、熟悉与现实的强锚点。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T26",
+      "type_code": "1-1-0-0-1",
+      "artwork": "《大使们》",
+      "artist": "Hans Holbein the Younger",
+      "archetype_name": "含蓄的洞察者",
+      "dimensions": {
+        "connection": 75,
+        "structure": 85,
+        "affect": 35,
+        "exploration": 25,
+        "imagination": 80
+      },
+      "keywords": [
+        "联结",
+        "秩序",
+        "细节",
+        "熟悉",
+        "象征"
+      ],
+      "hit_line": "你相信现实有结构，也习惯在关系和细节背后寻找第二层意义。",
+      "life_narrative": "你重视人与人的位置和现实秩序，也会留意表面之下隐藏的第二层信息。你并不追逐频繁变化，但熟悉世界里的物件、姿态和细节常会引发进一步联想。对你来说，想象更像洞察，而不是逃离。",
+      "why_this_artwork": "《大使们》以正式双人肖像和精密物件建立秩序，同时用象征物和变形骷髅增加第二层阅读。它把社会关系、稳定结构与隐含想象结合起来。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T27",
+      "type_code": "1-1-0-1-0",
+      "artwork": "《杜尔普博士的解剖课》",
+      "artist": "Rembrandt",
+      "archetype_name": "理性的求证者",
+      "dimensions": {
+        "connection": 80,
+        "structure": 90,
+        "affect": 35,
+        "exploration": 80,
+        "imagination": 20
+      },
+      "keywords": [
+        "联结",
+        "秩序",
+        "求证",
+        "探索",
+        "现实"
+      ],
+      "hit_line": "你愿意和别人一起面对未知，用观察、证据和秩序把问题拆开。",
+      "life_narrative": "你愿意和别人一起进入未知问题，但希望过程有证据、有步骤、能被验证。面对陌生事物，你的兴趣更多来自理解它，而不是把它变成幻想。你相信共同观察和清楚的方法能够让复杂问题逐渐打开。",
+      "why_this_artwork": "《杜尔普博士的解剖课》围绕共同观察组织群体，构图集中，主题来自真实知识实践。未知通过方法和证据被打开，而不是通过幻想。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T28",
+      "type_code": "1-1-0-1-1",
+      "artwork": "《雅典学院》",
+      "artist": "Raphael",
+      "archetype_name": "思想的建构者",
+      "dimensions": {
+        "connection": 95,
+        "structure": 95,
+        "affect": 35,
+        "exploration": 80,
+        "imagination": 75
+      },
+      "keywords": [
+        "联结",
+        "秩序",
+        "思想",
+        "探索",
+        "想象"
+      ],
+      "hit_line": "你喜欢把不同人的思想放进同一张地图，再一起走向更大的问题。",
+      "life_narrative": "你喜欢把不同人的知识和观点放在同一个结构里，再一起追问更大的问题。你既需要逻辑和秩序，也愿意走向抽象概念和未知领域。对你而言，想象不是脱离现实，而是建立新的思想地图。",
+      "why_this_artwork": "《雅典学院》把不同思想家置于高度秩序化的建筑空间，并让他们围绕知识与世界展开交流。现实人物原型、抽象思想和共同探索被统一起来。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T29",
+      "type_code": "1-1-1-0-0",
+      "artwork": "《夜巡》",
+      "artist": "Rembrandt",
+      "archetype_name": "有力的担当者",
+      "dimensions": {
+        "connection": 90,
+        "structure": 80,
+        "affect": 85,
+        "exploration": 35,
+        "imagination": 25
+      },
+      "keywords": [
+        "联结",
+        "秩序",
+        "强烈",
+        "责任",
+        "现实"
+      ],
+      "hit_line": "你重视共同目标，也愿意在需要的时候把情绪和行动凝聚成力量。",
+      "life_narrative": "你重视群体中的共同目标，也容易被真实的人和行动激发情绪。你不喜欢让能量只是四散发生，而会倾向把它组织起来、指向一件具体的事情。熟悉的责任和关系，常常是你投入力量的地方。",
+      "why_this_artwork": "《夜巡》描绘一个有明确组织关系的群体，却用光线、动作和空间制造强烈能量。它的情绪服务于共同目标，而题材保持现实和熟悉的社会属性。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T30",
+      "type_code": "1-1-1-0-1",
+      "artwork": "《吻》",
+      "artist": "Gustav Klimt",
+      "archetype_name": "深情的守护者",
+      "dimensions": {
+        "connection": 90,
+        "structure": 75,
+        "affect": 90,
+        "exploration": 25,
+        "imagination": 85
+      },
+      "keywords": [
+        "联结",
+        "亲密",
+        "秩序",
+        "强烈",
+        "想象"
+      ],
+      "hit_line": "你需要深刻而确定的连接，也愿意让想象为亲密关系增加光泽。",
+      "life_narrative": "你需要深刻而确定的连接。关系一旦重要，就不只是陪伴，而会成为情绪和想象共同发生的空间。你愿意让亲密保持秩序和承诺，同时也希望它超越普通日常，拥有属于两个人的光泽。",
+      "why_this_artwork": "《吻》以紧密拥抱为中心，再用金色纹样和装饰结构包裹人物。关系高度集中、情绪强烈，稳定亲密与想象化视觉同时存在。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T31",
+      "type_code": "1-1-1-1-0",
+      "artwork": "《梅杜萨之筏》",
+      "artist": "Théodore Géricault",
+      "archetype_name": "逆境中的领航者",
+      "dimensions": {
+        "connection": 90,
+        "structure": 70,
+        "affect": 95,
+        "exploration": 90,
+        "imagination": 30
+      },
+      "keywords": [
+        "联结",
+        "秩序",
+        "强烈",
+        "未知",
+        "行动"
+      ],
+      "hit_line": "越是局面复杂，你越会把强烈感受转化为共同寻找出路的行动。",
+      "life_narrative": "面对复杂局面，你的情绪会被迅速调动，但你更愿意把这种强度转化为共同寻找出路的行动。你能感受到危机，也会关注群体如何组织、坚持和向外求援。未知不会自动让你退回安全区。",
+      "why_this_artwork": "《梅杜萨之筏》以群体在现实灾难中的求生为主题，构图严密、动作和情绪达到高强度。共同处境、未知海面和现实行动同时被放大。",
+      "review_status": "pending_human_review"
+    },
+    {
+      "type_id": "T32",
+      "type_code": "1-1-1-1-1",
+      "artwork": "《最后的审判》",
+      "artist": "Michelangelo",
+      "archetype_name": "宏大的创造者",
+      "dimensions": {
+        "connection": 95,
+        "structure": 90,
+        "affect": 95,
+        "exploration": 85,
+        "imagination": 95
+      },
+      "keywords": [
+        "联结",
+        "秩序",
+        "强烈",
+        "探索",
+        "宏大想象"
+      ],
+      "hit_line": "你容易被宏大的问题吸引，也愿意把不同力量组织进同一个世界。",
+      "life_narrative": "你容易被宏大、复杂而开放的问题吸引。你不仅关注自己的位置，也会同时看见人与人、秩序、情绪和意义之间的关系。你愿意进入高强度的未知，并尝试把不同力量组织成一个完整世界。",
+      "why_this_artwork": "《最后的审判》把大量人物、强烈动作、宗教想象和整体秩序组织进一个宏大体系。它几乎把联结、结构、情感、未知与想象同时推向高位。",
+      "review_status": "pending_human_review"
+    }
+  ]
+}

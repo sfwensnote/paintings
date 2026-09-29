@@ -1,0 +1,10 @@
+{
+  "name": "画见 · 你的人生像哪一幅名画？",
+  "short_name": "画见",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eee8dc",
+  "theme_color": "#eee8dc",
+  "icons": [{ "src": "/frontend/mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

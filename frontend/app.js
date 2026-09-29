@@ -1,4 +1,10 @@
+import { createStaticApi } from './static-api.js';
+
 const STORAGE_KEY = 'huajian-assessment-v1';
+const STATIC_STORAGE_KEY = 'huajian-static-sessions-v1';
+const STATIC_MODE = window.HUAJIAN_STATIC_MODE === true || new URLSearchParams(location.search).has('static');
+const APP_ROOT = new URL('.', location.href);
+const appURL = path => new URL(String(path).replace(/^\/+/, ''), APP_ROOT).href;
 const dimensions = [
   ['connection', '联结倾向', '独处', '联结'],
   ['structure', '结构偏好', '自发', '秩序'],
@@ -12,21 +18,28 @@ const chapters = [
   { start: 17, end: 24, title: '关于你的内心', copy: '最后，留一点时间给那些不太容易被别人看到的部分。' },
 ];
 const state = { route: 'home', phase: 'chapter', questions: [], catalog: {}, answers: {}, index: 0, sessionId: '', userId: '', chapterIndex: 0, result: null, shareView: null, busy: false, rating: 0 };
+let staticAPI;
 
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const safeURL = value => {
-  try { const url = new URL(value, location.href); return ['http:', 'https:'].includes(url.protocol) ? url.href : ''; }
+  if (!value) return '';
+  try { const url = new URL(String(value).replace(/^\/+/, ''), APP_ROOT); return ['http:', 'https:'].includes(url.protocol) ? url.href : ''; }
   catch { return ''; }
 };
 const getSaved = () => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch { return {}; } };
 const saveLocal = () => localStorage.setItem(STORAGE_KEY, JSON.stringify({ sessionId: state.sessionId, userId: state.userId, answers: state.answers, index: state.index, result: state.result, updatedAt: Date.now() }));
 const api = async (url, body, method = 'POST') => {
+  if (STATIC_MODE) {
+    staticAPI ||= createStaticApi();
+    return (await staticAPI)(url, body, method);
+  }
   const response = await fetch(url, { method, headers: body ? { 'Content-Type': 'application/json' } : {}, body: body ? JSON.stringify(body) : undefined });
   const data = await response.json();
   if (!response.ok) throw Object.assign(new Error(data.error || '请求未完成'), { status: response.status, data });
   return data;
 };
 const event = (name, extra = {}) => {
+  if (STATIC_MODE) return;
   if (!state.sessionId && name !== 'landing_view') return;
   api('/api/event', { event_name: name, session_id: state.sessionId || null, user_id: state.userId || null, ...extra }).catch(() => {});
 };
@@ -44,14 +57,14 @@ const artworkImage = (artwork, className = '') => {
     ? `<a class="artwork-image-link ${className} ${artwork?.image_layout === 'panorama' ? 'panorama-image' : ''}" href="${escapeHTML(image)}" target="_blank" rel="noreferrer" aria-label="查看完整作品图：${escapeHTML(artwork.name_cn)}"><img class="artwork-image" src="${escapeHTML(image)}" alt="${escapeHTML(artwork.name_cn)}" loading="lazy" referrerpolicy="no-referrer">${artwork?.image_layout === 'panorama' ? '<span class="panorama-hint">长卷 · 点击查看全卷</span>' : ''}</a>`
     : `<div class="art-placeholder ${className}" role="img" aria-label="${escapeHTML(artwork?.name_cn || '作品图片待补')}"><span class="placeholder-kicker">作品图待补</span><span class="placeholder-title">${escapeHTML(artwork?.name_cn || '无题')}</span><span class="placeholder-caption">${escapeHTML(artwork?.artist_cn || artwork?.artist_en || '')}</span></div>`;
 };
-const header = (right = '') => `<header class="site-header"><a class="wordmark" href="/" aria-label="画见首页"><img src="/frontend/mark.svg" alt="" aria-hidden="true"><span>画见</span><i>ART & LIFE</i></a><nav class="header-nav"><span>探索生活中的艺术气质</span>${right}</nav></header>`;
+const header = (right = '') => `<header class="site-header"><a class="wordmark" href="${appURL('')}" aria-label="画见首页"><img src="${appURL('frontend/mark.svg')}" alt="" aria-hidden="true"><span>画见</span><i>ART & LIFE</i></a><nav class="header-nav"><span>探索生活中的艺术气质</span>${right}</nav></header>`;
 
 function renderHome() {
   state.route = 'home';
   const saved = getSaved();
   const progress = state.questions.length ? Object.keys(saved.answers || {}).length : 0;
   const resume = saved.sessionId && saved.answers && progress > 0 && !saved.result;
-  document.querySelector('#main').innerHTML = `${header('<a class="admin-link" href="/admin">作品管理 <span aria-hidden="true">↗</span></a>')}
+  document.querySelector('#main').innerHTML = `${header(STATIC_MODE ? '' : `<a class="admin-link" href="${appURL('admin/')}">作品管理 <span aria-hidden="true">↗</span></a>`)}
     <section class="hero container">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-mark"></span> 从日常选择出发，找到与你共鸣的画</p>
@@ -61,10 +74,10 @@ function renderHome() {
         <div class="hero-actions"><button class="button button-primary" id="start">${resume ? '继续寻找我的画' : '开始寻找我的画'}<span aria-hidden="true">↗</span></button><span class="duration">约 5 分钟 <b>·</b> 25 个选择</span></div>
         ${resume ? `<p class="resume-note">已保存 ${progress} 个选择，从上次的位置接着来。</p>` : ''}
         <p class="small-note">这不是艺术知识测试，也不用于诊断或评判；选择没有好坏之分。</p>
-        <p class="privacy-note">无需填写身份信息。服务会用随机会话编号保存答题记录、结果和自愿反馈，用于恢复进度与改进测试；请勿填写姓名或联系方式。</p>
+        <p class="privacy-note">${STATIC_MODE ? '答题、结果和自愿反馈仅保存在当前设备，不会发送至服务端；清除浏览器数据会删除本机进度。' : '无需填写身份信息。服务会用随机会话编号保存答题记录、结果和自愿反馈，用于恢复进度与改进测试；请勿填写姓名或联系方式。'}</p>
       </div>
       <div class="hero-art" aria-label="梵高《星月夜》作品展示">
-        <div class="art-frame"><img src="/paints/T06.webp" alt="文森特·梵高《星月夜》" fetchpriority="high"><span class="frame-veil"></span><span class="frame-index">FIG. 06 <i>·</i> 1889</span></div>
+        <div class="art-frame"><img src="${appURL('paints/T06.webp')}" alt="文森特·梵高《星月夜》" fetchpriority="high"><span class="frame-veil"></span><span class="frame-index">FIG. 06 <i>·</i> 1889</span></div>
         <div class="art-caption"><a href="https://commons.wikimedia.org/wiki/File:The_Starry_Night.jpg" target="_blank" rel="noreferrer">《星月夜》· 文森特·梵高 · 1889</a><span>WIKIMEDIA COMMONS</span></div>
       </div>
     </section>
@@ -208,7 +221,7 @@ function renderResult() {
   if (!artwork) { state.route = 'home'; return renderHome(); }
   const score = result.top3?.[0]?.similarity;
   const savedRating = result.result_rating || state.rating || 0;
-  document.querySelector('#main').innerHTML = `${header('<a class="admin-link" href="/admin">作品管理 <span aria-hidden="true">↗</span></a>')}
+  document.querySelector('#main').innerHTML = `${header(STATIC_MODE ? '' : `<a class="admin-link" href="${appURL('admin/')}">作品管理 <span aria-hidden="true">↗</span></a>`)}
     <section class="result-intro container"><p class="eyebrow">在这些人生画面中，最接近你的，是</p><span class="result-overline">YOUR PAINTING · ${escapeHTML(artwork.year || '')}</span></section>
     <section class="result-hero container">
       <div class="result-art-wrap"><div class="result-art-frame">${artworkImage(artwork, 'result-art-image')}<span class="result-art-index">画册藏页 <i>·</i> ${escapeHTML(artwork.year || '')}</span></div><p class="art-credit">${escapeHTML(artwork.artist_cn || artwork.artist_en || '')} <span>${escapeHTML(artwork.year || '')}</span></p></div>
@@ -219,7 +232,7 @@ function renderResult() {
     <section class="similar-section container"><div class="similar-heading"><div class="section-heading"><span>03</span><h2>还有几幅画，也与你相近</h2></div><p>按五维连续分数的整体距离排序</p></div><div class="similar-grid">${(result.top3 || []).slice(1).map((item, i) => `<article class="similar-card"><div class="similar-art">${artworkImage(item.artwork, '')}<span class="similar-rank">0${i + 2}</span></div><div class="similar-card-copy"><p>${escapeHTML(item.artwork.archetype_name)}</p><h3>${escapeHTML(item.artwork.name_cn)}</h3><span>${escapeHTML(item.artwork.artist_en || item.artwork.artist_cn || '')}</span><b>${Number(item.similarity).toFixed(1)}%</b></div></article>`).join('')}</div></section>
     <section class="feedback-section container"><div class="feedback-copy"><p class="eyebrow">留下一点回声</p><h2>你觉得这幅画像你吗？</h2><p>你的反馈会帮助我们校准作品与气质之间的距离。</p></div><div class="rating-box"><div class="rating-buttons" role="group" aria-label="你觉得匹配结果像你吗？">${[1,2,3,4,5].map(n => `<button class="rating-button ${savedRating >= n ? 'rated' : ''}" aria-label="${n} 分" aria-pressed="${savedRating === n}" data-rating="${n}">★</button>`).join('')}</div><div class="rating-labels"><span>不太像</span><span>很像</span></div><label class="sr-only" for="feedback-text">哪部分最像你？（可选）</label><textarea id="feedback-text" maxlength="500" placeholder="哪部分最像你？（可选）">${escapeHTML(result.feedback_text || '')}</textarea><button class="text-button save-feedback" id="save-rating">保存反馈 <span aria-hidden="true">↗</span></button></div></section>
     <section class="share-section"><div class="container share-inner"><div><p class="eyebrow">把这幅画分享出去</p><h2>也看看他们的人生，<br>像哪一幅画。</h2></div><div class="share-output"><div class="share-card" id="share-card"><div class="share-card-art">${artworkImage(artwork, '')}</div><div class="share-card-copy"><span>我的人生像</span><strong>${escapeHTML(artwork.name_cn)}</strong><p>${escapeHTML(artwork.hit_line)}</p><i>画见 · 发现与你共鸣的名画</i></div></div><button class="text-button" id="download-card">下载结果卡 PNG <span aria-hidden="true">↓</span></button></div><button class="button button-light" id="share">分享我的结果 <span aria-hidden="true">↗</span></button></div></section>
-    <footer class="site-footer container"><span>画见 · ART & LIFE</span><span>内容版本 ${escapeHTML(result.artwork_set_version || 'A_V0.6')} · 作品向量与版权信息待复核</span><a class="text-button" id="restart" href="/?restart=1">重新寻找 <span aria-hidden="true">↗</span></a></footer>`;
+    <footer class="site-footer container"><span>画见 · ART & LIFE</span><span>内容版本 ${escapeHTML(result.artwork_set_version || 'A_V0.6')} · 作品向量与版权信息待复核</span><a class="text-button" id="restart" href="${appURL('?restart=1')}">重新寻找 <span aria-hidden="true">↗</span></a></footer>`;
   document.querySelector('#main').querySelectorAll('.rating-button').forEach(button => button.addEventListener('click', () => {
     state.rating = Number(button.dataset.rating);
     document.querySelectorAll('.rating-button').forEach((node, index) => {
@@ -237,7 +250,7 @@ async function submitRating() {
   if (!state.rating) return toast('先选一个分数，再保存反馈。');
   const feedback = document.querySelector('#feedback-text').value.trim();
   try {
-    await api(`/api/session/${state.sessionId}/rating`, { rating: state.rating, feedback_text: feedback });
+    if (!STATIC_MODE) await api(`/api/session/${state.sessionId}/rating`, { rating: state.rating, feedback_text: feedback });
     state.result.result_rating = state.rating;
     state.result.feedback_text = feedback;
     saveLocal();
@@ -320,7 +333,7 @@ async function shareResult() {
   button.disabled = true;
   try {
     const shareId = state.result.share_id;
-    const url = new URL('/', location.href);
+    const url = new URL(APP_ROOT.href);
     url.searchParams.set('share', shareId);
     await api(`/api/session/${state.sessionId}/share`, {});
     if (navigator.share && navigator.canShare) {
@@ -353,9 +366,9 @@ async function renderShared(shareId) {
     state.shareView = shared;
     const artwork = shared.artwork;
     document.querySelector('#main').innerHTML = `${header()}<section class="shared-view container"><div class="shared-art">${artworkImage(artwork, '')}</div><div class="shared-copy"><p class="eyebrow">有人把人生分享成了一幅画</p><h1>${escapeHTML(artwork.name_cn)}</h1><p class="shared-artist">${escapeHTML(artwork.artist_en || artwork.artist_cn || '')}</p><blockquote>${escapeHTML(artwork.hit_line)}</blockquote><p class="shared-invite">你的选择、情绪和生活偏好，也许也藏在某幅画里。</p><button class="button button-primary" id="shared-start">开始寻找我的画 <span aria-hidden="true">↗</span></button></div></section>`;
-    document.querySelector('#shared-start').addEventListener('click', () => { history.replaceState({}, '', '/'); renderHome(); document.querySelector('#start').click(); });
+    document.querySelector('#shared-start').addEventListener('click', () => { history.replaceState({}, '', APP_ROOT.pathname); renderHome(); document.querySelector('#start').click(); });
   } catch (error) {
-    document.querySelector('#main').innerHTML = `${header()}<section class="shared-view container"><div class="shared-copy"><p class="eyebrow">分享卡片</p><h1>这幅画暂时找不到。</h1><p>${escapeHTML(error.message)}</p><a class="button button-primary" href="/">回到首页</a></div></section>`;
+    document.querySelector('#main').innerHTML = `${header()}<section class="shared-view container"><div class="shared-copy"><p class="eyebrow">分享卡片</p><h1>这幅画暂时找不到。</h1><p>${escapeHTML(error.message)}</p><a class="button button-primary" href="${appURL('')}">回到首页</a></div></section>`;
   }
 }
 
@@ -364,11 +377,15 @@ async function resumeResult(saved) {
   state.userId = saved.userId;
   state.result = saved.result;
   state.rating = saved.result?.result_rating || 0;
-  try {
-    const fresh = await api(`/api/session/${state.sessionId}/complete`, {});
-    state.result = fresh;
-    saveLocal();
-  } catch { /* Keep the locally saved result available if the service is temporarily offline. */ }
+  if (!STATIC_MODE) {
+    try {
+      const fresh = await api(`/api/session/${state.sessionId}/complete`, {});
+      state.result = fresh;
+      saveLocal();
+    } catch { /* Keep the locally saved result available if the service is temporarily offline. */ }
+  } else if (state.result?.primary) {
+    state.result.share_id = state.result.primary.artwork_id;
+  }
   renderResult();
 }
 
@@ -377,7 +394,8 @@ async function boot() {
   const restarting = params.has('restart');
   if (restarting) {
     localStorage.removeItem(STORAGE_KEY);
-    history.replaceState({}, '', '/');
+    if (STATIC_MODE) localStorage.removeItem(STATIC_STORAGE_KEY);
+    history.replaceState({}, '', APP_ROOT.pathname);
   }
   const shareId = restarting ? null : params.get('share');
   if (shareId) return renderShared(shareId);
@@ -392,7 +410,7 @@ async function boot() {
   renderHome();
 }
 
-if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+if (!STATIC_MODE && 'serviceWorker' in navigator && location.protocol.startsWith('http')) {
   if (navigator.serviceWorker.controller) {
     let refreshing = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
@@ -401,6 +419,6 @@ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
       location.reload();
     });
   }
-  navigator.serviceWorker.register('/sw.js').catch(() => {});
+  navigator.serviceWorker.register(appURL('sw.js')).catch(() => {});
 }
 boot().catch(error => { document.querySelector('#main').innerHTML = `<section class="shared-view container"><div class="shared-copy"><h1>作品册尚未打开。</h1><p>${escapeHTML(error.message)}</p><p>请从项目中的本地启动脚本打开产品。</p></div></section>`; });

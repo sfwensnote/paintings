@@ -1,0 +1,53 @@
+name: Deploy static app to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pages.yml'
+      - 'frontend/**'
+      - 'database/artworks.json'
+      - 'database/questions.json'
+      - 'paints/**'
+      - 'manifest.webmanifest'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Prepare the no-backend site
+        run: |
+          mkdir -p _site/frontend _site/database _site/paints
+          sed 's#</head>#  <script>window.HUAJIAN_STATIC_MODE = true;</script>\n</head>#' frontend/index.html > _site/index.html
+          cp frontend/app.css frontend/app.js frontend/static-api.js frontend/mark.svg _site/frontend/
+          cp database/artworks.json database/questions.json _site/database/
+          cp -R paints/. _site/paints/
+          cp manifest.webmanifest _site/manifest.webmanifest
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

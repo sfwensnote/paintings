@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 12973)
+Total output lines: 1218
+
 [
   {
     "artwork_id": "A001",
@@ -370,7 +373,7 @@
     "life_narrative": "你表面上偏爱稳定和秩序，内心却会对熟悉事物产生第二层想象。你不一定主动追逐陌生环境，但一条空街、一束斜光、一个不合常理的细节，都可能让你开始思考现实之外还隐藏着什么。",
     "why_this_artwork": "德·基里科用严格透视和建筑秩序描绘空旷街道，却通过阴影、尺度和不合常理的关系制造谜感。它把熟悉结构转化成克制的想象。",
     "art_context": "1914 · 意大利 / 形而上绘画。",
-    "image_url": "",
+    "image_url": "/paints/T10.webp",
     "image_source": "https://fondazionedechirico.org/en/copyright-information/",
     "copyright_status": "复制展示权待授权；基金会说明作品复制请求需交由 SIAE 处理。",
     "status": "active",
@@ -561,106 +564,7 @@
     "why_this_artwork": "大卫用新古典主义的清晰结构组织一场跨越险境的行动。人物目标明确、方向清楚、情绪昂扬，适合秩序感强且面向现实挑战的探索类型。",
     "art_context": "1801 · 法国 / 新古典主义。",
     "image_url": "/paints/T15.webp",
-    "image_source": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_Napoleon_Crossing_the_Alps_-_Schloss_Charlottenburg.jpg",
-    "copyright_status": "Public domain / PD-Art (Wikimedia Commons; check target territory for commercial reuse)",
-    "status": "active",
-    "catalog_kind": "formal_seed",
-    "review_status": "pending_human_review",
-    "version": "A_V0.6",
-    "image_layout": "fit"
-  },
-  {
-    "artwork_id": "A016",
-    "type_id": "T16",
-    "type_code": "0-1-1-1-1",
-    "name_cn": "《死之岛》",
-    "name_en": "",
-    "artist_cn": "Arnold Böcklin",
-    "artist_en": "",
-    "year": "1880",
-    "culture_and_style": "瑞士 / 象征主义",
-    "dimensions": {
-      "connection": 10,
-      "structure": 80,
-      "affect": 75,
-      "exploration": 80,
-      "imagination": 90
-    },
-    "keywords": [
-      "独处",
-      "秩序",
-      "深处",
-      "强烈",
-      "象征"
-    ],
-    "archetype_name": "幽境的远航者",
-    "hit_line": "你被未知吸引，但不是莽撞靠近；你更愿意带着秩序走进深处。",
-    "life_narrative": "你对未知、象征和边界问题有很强的吸引力，但你进入这些领域的方式并不混乱。你需要一种内部秩序来承载强烈感受，再沿着它走向更深、更远的地方。对你来说，想象是一种有方向的探索。",
-    "why_this_artwork": "《死之岛》以稳定近乎对称的构图，引导小船驶向封闭而神秘的岛。秩序、强情绪、远行与象征想象同时存在。",
-    "art_context": "1880 · 瑞士 / 象征主义。",
-    "image_url": "/paints/T16.webp",
-    "image_source": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Toteninsel_I_(Kunstmuseum,_Basel).jpg",
-    "copyright_status": "Public domain / PD-Art (Wikimedia Commons; check target territory for commercial reuse)",
-    "status": "active",
-    "catalog_kind": "formal_seed",
-    "review_status": "pending_human_review",
-    "version": "A_V0.6",
-    "image_layout": "fit"
-  },
-  {
-    "artwork_id": "A017",
-    "type_id": "T17",
-    "type_code": "1-0-0-0-0",
-    "name_cn": "《划船》",
-    "name_en": "",
-    "artist_cn": "Édouard Manet",
-    "artist_en": "",
-    "year": "1874",
-    "culture_and_style": "法国 / 印象主义语境",
-    "dimensions": {
-      "connection": 70,
-      "structure": 30,
-      "affect": 30,
-      "exploration": 25,
-      "imagination": 20
-    },
-    "keywords": [
-      "联结",
-      "松弛",
-      "日常",
-      "熟悉",
-      "真实"
-    ],
-    "archetype_name": "松弛的同行者",
-    "hit_line": "你喜欢有人同行，却不需要把每一刻都安排得很满。",
-    "life_narrative": "你喜欢与人共享生活，但不需要把关系经营成一套精密计划。熟悉的陪伴、真实的天气和自然发生的对话，对你来说就已经足够。你更在意一起度过的感觉，而不是这段时间必须产生什么意义。",
-    "why_this_artwork": "马奈把两个人的水上休闲处理得轻松直接，构图开放、气氛日常，没有强烈戏剧。它强调陪伴、松弛、熟悉与现实体验。",
-    "art_context": "1874 · 法国 / 印象主义语境。",
-    "image_url": "/paints/T17.webp",
-    "image_source": "https://commons.wikimedia.org/wiki/File:Boating_-_%C3%89douard_Manet.jpg",
-    "copyright_status": "CC0 1.0 (Wikimedia Commons)",
-    "status": "active",
-    "catalog_kind": "formal_seed",
-    "review_status": "pending_human_review",
-    "version": "A_V0.6",
-    "image_layout": "fit"
-  },
-  {
-    "artwork_id": "A018",
-    "type_id": "T18",
-    "type_code": "1-0-0-0-1",
-    "name_cn": "《我与村庄》",
-    "name_en": "",
-    "artist_cn": "",
-    "artist_en": "Marc Chagall",
-    "year": "1911",
-    "culture_and_style": "俄法 / 现代主义",
-    "dimensions": {
-      "connection": 75,
-      "structure": 35,
-      "affect": 40,
-      "exploration": 25,
-      "imagination": 90
+    "image_source": "https://…973 tokens truncated…    "imagination": 90
     },
     "keywords": [
       "联结",
@@ -674,7 +578,7 @@
     "life_narrative": "你和熟悉的人、地方之间有稳定连接，但记忆在你心里从来不是原样保存。你会自然地把现实中的人物、动物、家乡和片段重新组合，形成带有私人色彩的世界。想象让关系变得更长久。",
     "why_this_artwork": "夏加尔把人物、动物和村庄记忆并置在同一画面中。关系来自熟悉生活，结构却自由跳跃，现实被记忆和想象重新编织。",
     "art_context": "1911 · 俄法 / 现代主义。",
-    "image_url": "",
+    "image_url": "/paints/T18.webp",
     "image_source": "https://www.moma.org/collection/works/78984",
     "copyright_status": "作品页面标注 © Artists Rights Society / ADAGP；图像未下载，待确认复制许可。",
     "status": "active",
@@ -826,7 +730,7 @@
     "life_narrative": "亲密关系会明显放大你的感受，也会激活你的想象。你喜欢让熟悉生活保持一点不受规则限制的浪漫：一个普通房间、一段关系、一个瞬间，都可能在你心里变得轻盈、夸张而特别。",
     "why_this_artwork": "《生日》从一个亲密室内瞬间出发，却让人物漂浮、姿态被拉长。真实关系、强烈情感和自由想象被压进同一个日常场景。",
     "art_context": "1915 · 俄法 / 现代主义。",
-    "image_url": "",
+    "image_url": "/paints/T22.webp",
     "image_source": "https://www.marcchagall.com/en/discovery/themes/dream/birthday-1915",
     "copyright_status": "作品在保护期内；图片未下载，展示授权需向 Chagall Estate / ADAGP 申请。",
     "status": "active",
